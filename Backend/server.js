@@ -4,6 +4,7 @@ const connectDB = require("./src/DB/db");
 const cookieParser = require("cookie-parser");
 
 connectDB();
+console.log("MONGO_URI:", process.env.MONGO_URI);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
