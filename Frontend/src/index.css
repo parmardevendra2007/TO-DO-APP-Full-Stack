@@ -1,0 +1,25 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@800&family=DM+Sans:wght@400;500&display=swap');
+
+@keyframes sparkle-border {
+  0%   { box-shadow: 0 0 0 2px #3b82f6, 0 0 8px 2px #93c5fd; }
+  25%  { box-shadow: 0 0 0 2px #60a5fa, 0 0 12px 4px #bfdbfe; }
+  50%  { box-shadow: 0 0 0 2px #3b82f6, 0 0 8px 2px #93c5fd; }
+  75%  { box-shadow: 0 0 0 2px #1d4ed8, 0 0 14px 5px #60a5fa; }
+  100% { box-shadow: 0 0 0 2px #3b82f6, 0 0 8px 2px #93c5fd; }
+}
+@keyframes sparkle-fuchsia {
+  0%   { box-shadow: 0 0 0 2px #d946ef, 0 0 8px 2px #f0abfc; }
+  25%  { box-shadow: 0 0 0 2px #e879f9, 0 0 12px 4px #f5d0fe; }
+  50%  { box-shadow: 0 0 0 2px #d946ef, 0 0 8px 2px #f0abfc; }
+  75%  { box-shadow: 0 0 0 2px #a21caf, 0 0 14px 5px #e879f9; }
+  100% { box-shadow: 0 0 0 2px #d946ef, 0 0 8px 2px #f0abfc; }
+}
+
+@keyframes sparkle-yellow {
+  0%   { box-shadow: 0 0 0 2px #eab308, 0 0 8px 2px #fde68a; }
+  25%  { box-shadow: 0 0 0 2px #facc15, 0 0 12px 4px #fef08a; }
+  50%  { box-shadow: 0 0 0 2px #eab308, 0 0 8px 2px #fde68a; }
+  75%  { box-shadow: 0 0 0 2px #a16207, 0 0 14px 5px #facc15; }
+  100% { box-shadow: 0 0 0 2px #eab308, 0 0 8px 2px #fde68a; }
+}
