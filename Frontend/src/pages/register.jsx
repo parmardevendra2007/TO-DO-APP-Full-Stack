@@ -93,7 +93,7 @@ export default function RegisterPage() {
 
     setLoading(true);
     try {
-      await axios.post("http://localhost:5000/api/register", {
+      await axios.post("https://to-do-app-full-stack.vercel.app/api/register", {
         email:    form.email,
         password: form.password,
       });
