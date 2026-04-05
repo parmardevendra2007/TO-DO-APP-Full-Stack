@@ -12,7 +12,7 @@ const app = express();
 // Middleware
 app.use(
   cors({
-    origin: "https://sweet-mermaid-cce03a.netlify.app",
+    origin: "https://to-do-app-full-stack-ume7.vercel.app/register",
     credentials: true,
   })
 );
