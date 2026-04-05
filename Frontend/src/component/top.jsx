@@ -32,19 +32,25 @@ const top = () => {
     };
 
     // ── ALL YOUR ORIGINAL LOGIC UNCHANGED ──
-    const handleForm = async (e) => {
-        e.preventDefault()
-        if (!task.trim()) return;
-        let newArray = [...array]
-        newArray.push({title: task})
-        setArray(newArray)
-        setTask('')
-        try {
-            await axios.post("https://to-do-app-full-stack-6jto.onrender.com/api/todos", { title: task }, { withCredentials: true })
-        } catch (error) {
-            console.error("Error adding todo:", error);
-        }
-    }
+   const handleForm = async (e) => {
+  e.preventDefault();
+  if (!task.trim()) return;
+
+  try {
+    const res = await axios.post(
+      "https://to-do-app-full-stack-6jto.onrender.com/api/todos",
+      { title: task },
+      { withCredentials: true }
+    );
+
+    // ✅ backend se real todo aayega (with _id)
+    setArray([...array, res.data]);
+
+    setTask("");
+  } catch (error) {
+    console.error("Error adding todo:", error);
+  }
+};
 
     useEffect(() => {
         const fetchData = async () => {
