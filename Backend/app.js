@@ -21,5 +21,11 @@ app.use(cookieParser());
 
 app.use("/api", todoroutes);
 app.use("/api", authroutes);
+app.get('/', (req, res) => {
+  res.send({
+    activeStatus: true,
+    error: false,
+  });
+});
 
 module.exports = app;
