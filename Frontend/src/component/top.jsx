@@ -20,7 +20,7 @@ const top = () => {
     // ── LOGOUT ──
     const handleLogout = async () => {
         try {
-            await axios.post("https://to-do-app-full-stack.vercel.app/api/auth/logout", {}, {
+            await axios.post("https://to-do-app-full-stack-6jto.onrender.com/api/auth/logout", {}, {
                 withCredentials: true,
             });
         } catch (error) {
@@ -40,7 +40,7 @@ const top = () => {
         setArray(newArray)
         setTask('')
         try {
-            await axios.post("https://to-do-app-full-stack.vercel.app/api/todos", { title: task }, { withCredentials: true })
+            await axios.post("https://to-do-app-full-stack-6jto.onrender.com/api/todos", { title: task }, { withCredentials: true })
         } catch (error) {
             console.error("Error adding todo:", error);
         }
@@ -49,7 +49,7 @@ const top = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                await axios.get("https://to-do-app-full-stack.vercel.app/api/todos", { withCredentials: true }).then((res) => {
+                await axios.get("https://to-do-app-full-stack-6jto.onrender.com/api/todos", { withCredentials: true }).then((res) => {
                     let newArray = [...array]
                     res.data.map((item) => { newArray.push(item) })
                     setArray(newArray)
@@ -64,7 +64,7 @@ const top = () => {
     async function handleDelete(e, id) {
         e.preventDefault();
         try {
-            await axios.delete(`https://to-do-app-full-stack.vercel.app/api/todos/${id}`, { withCredentials: true });
+            await axios.delete(`https://to-do-app-full-stack-6jto.onrender.com/api/todos/${id}`, { withCredentials: true });
             let newArray = array.filter((item) => item._id !== id);
             setArray(newArray);
         } catch (error) {
@@ -74,7 +74,7 @@ const top = () => {
 
     async function toggleComplete(id) {
         try {
-            const response = await axios.put(`https://to-do-app-full-stack.vercel.app/api/todos/${id}/toggle`, {}, { withCredentials: true });
+            const response = await axios.put(`https://to-do-app-full-stack-6jto.onrender.com/api/todos/${id}/toggle`, {}, { withCredentials: true });
             const updatedTodo = response.data;
             let newArray = array.map((item) => {
                 if (item._id === response.data._id) return { ...item, completed: updatedTodo.completed };
@@ -94,7 +94,7 @@ const top = () => {
     async function handleUpdate(e, id) {
         e.preventDefault();
         try {
-            const response = await axios.put(`https://to-do-app-full-stack.vercel.app/api/todos/${id}`, { title: editText }, { withCredentials: true });
+            const response = await axios.put(`https://to-do-app-full-stack-6jto.onrender.com/api/todos/${id}`, { title: editText }, { withCredentials: true });
             const updatedTodo = response.data;
             let newArray = array.map((item) => {
                 if (item._id === response.data._id) return { ...item, title: updatedTodo.title };
@@ -112,7 +112,7 @@ const top = () => {
         e.preventDefault();
         try {
             if (!Search.trim()) {
-                const response = await axios.get("https://to-do-app-full-stack.vercel.app/api/todos", { withCredentials: true });
+                const response = await axios.get("https://to-do-app-full-stack-6jto.onrender.com/api/todos", { withCredentials: true });
                 setArray(response.data);
                 return;
             }
